@@ -26,6 +26,7 @@ class Curl implements ClientInterface
         curl_setopt($curl, CURLOPT_URL, $request->getUrl());
         curl_setopt($curl, CURLOPT_HTTPHEADER, $request->getHeaders());
         curl_setopt($curl, CURLOPT_POSTFIELDS, $request->getContent());
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
     }
 
     static protected function getLastResponse($raw)
